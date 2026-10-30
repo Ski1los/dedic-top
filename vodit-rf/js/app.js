@@ -100,7 +100,7 @@
       hours: "24 ак. часа",
       tag: "Хит",
       icon: "boat",
-      image: "transport-boat.jpg",
+      image: "img/transport-boat.jpg",
       desc: "Классика речного вождения: маневрирование, швартовка и уверенность на волне.",
       specs: [
         ["Длительность", "6 недель"],
@@ -116,7 +116,7 @@
       hours: "36 ак. часов",
       tag: "Профи",
       icon: "liner",
-      image: "transport-liner.jpg",
+      image: "img/transport-liner.jpg",
       desc: "Работа на пассажирских судах: навигация, радиосвязь и управление экипажем.",
       specs: [
         ["Длительность", "9 недель"],
@@ -132,7 +132,7 @@
       hours: "30 ак. часов",
       tag: "Премиум",
       icon: "yacht",
-      image: "transport-yacht.jpg",
+      image: "img/transport-yacht.jpg",
       desc: "Курс для тех, кто мечтает о собственной яхте: управление, навигация, безопасность.",
       specs: [
         ["Длительность", "7 недель"],
@@ -871,6 +871,50 @@
         }
       });
     });
+  }
+
+
+  /* ---------------- 6.1. Анимированные цифры ---------------- */
+  function initCounters() {
+    const items = $$("[data-counter]");
+    if (!items.length) return;
+    const reduce =
+      typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const format = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+    const animate = (el) => {
+      const target = Number(el.dataset.counter) || 0;
+      if (reduce) {
+        el.textContent = format(target);
+        return;
+      }
+      const duration = 1200;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = format(target * eased);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach(animate);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    items.forEach((el) => io.observe(el));
   }
 
   /* ---------------- 9. Страница: вход ---------------- */
@@ -1703,6 +1747,7 @@
     initFaq();
     attachPasswordToggle();
     $$("[data-slider]").forEach(initSlider);
+    initCounters();
     $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
     const page = document.body.dataset.page;
