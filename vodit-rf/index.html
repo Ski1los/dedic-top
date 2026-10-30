@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Вход — Водить.РФ · школа вождения речного транспорта</title>
-  <meta name="description" content="Вход в личный кабинет школы «Водить.РФ». Курсы вождения катера, круизного лайнера и яхты: заявки на обучение, статусы и отзывы.">
+  <title>Водить.РФ — вход в личный кабинет школы речного транспорта</title>
+  <meta name="description" content="Вход в личный кабинет школы «Водить.РФ». Курсы вождения катера, круизного лайнера и яхты: заявки на обучение, статусы и отзывы выпускников.">
   <meta name="theme-color" content="#007BFF">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero.jpg" as="image">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="login">
@@ -16,7 +18,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
-        <img src="img/logo.png" alt="" width="40" height="30" decoding="async">
+        <img src="img/logo.png" alt="" width="38" height="30" decoding="async">
         <span>Водить.РФ<small>школа речного транспорта</small></span>
       </a>
 
@@ -26,8 +28,7 @@
           <li><a class="nav__link" href="#courses">Направления</a></li>
           <li><a class="nav__link" href="#how">Как учимся</a></li>
           <li><a class="nav__link" href="#reviews">Отзывы</a></li>
-          <li><a class="nav__link" href="account.html">Кабинет</a></li>
-          <li><a class="nav__link" href="request.html">Заявка</a></li>
+          <li><a class="nav__link" href="#faq">Вопросы</a></li>
         </ul>
       </nav>
 
@@ -41,82 +42,85 @@
   </header>
 
   <main id="main">
-    <div class="auth">
-      <aside class="auth__aside">
-        <img src="img/auth-photo.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="870" height="1160" fetchpriority="high" decoding="async">
-        <span class="badge badge--white" style="align-self:flex-start;margin-bottom:auto">Личный кабинет курсанта</span>
-        <h2>Ваши заявки, статусы и отзывы — в одном месте</h2>
-        <p>Войдите, чтобы видеть историю обучения, следить за согласованием заявок и оставлять отзывы после выпуска.</p>
-        <div class="hero__facts">
-          <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
-            История заявок
-          </span>
-          <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
-            Отзывы о курсах
-          </span>
-          <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
-            Запись за 2 минуты
-          </span>
-        </div>
-      </aside>
-
-      <div class="auth__panel">
-        <div class="auth-card">
-          <nav class="breadcrumbs" aria-label="Хлебные крошки">
-            <a href="index.html">Водить.РФ</a><span class="sep">/</span><span>Вход</span>
-          </nav>
-
-          <div class="auth-card__head">
-            <h1>Вход в кабинет</h1>
-            <p>Введите логин и пароль, указанные при регистрации.</p>
+    <!-- ГЕРОЙ + ФОРМА ВХОДА -->
+    <section class="hero">
+      <img class="hero__bg" src="img/hero.jpg" srcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" sizes="100vw" alt="Катер идёт по Неве на фоне набережной Санкт-Петербурга" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <span class="eyebrow">Санкт-Петербург · школа судоводителей</span>
+            <h1>Управляйте катером, лайнером и яхтой <em>уверенно</em></h1>
+            <p class="hero__lead">Очное обучение на воде с инструктором, теория навигации и официальное удостоверение судоводителя. Заявка оформляется онлайн за пару минут.</p>
+            <div class="hero__facts">
+              <span class="hero__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+                <b>3</b> направления обучения
+              </span>
+              <span class="hero__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+                <b>96%</b> сдают с первого раза
+              </span>
+              <span class="hero__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+                <b>12 400</b> выпускников
+              </span>
+            </div>
           </div>
 
-          <div class="demo-hint">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
-            <span>Демо-доступ курсанта: <code>demo26</code> / <code>Demo2026</code><br>Администратор: <code>Admin26</code> / <code>Demo20</code></span>
-          </div>
+          <div class="login-card">
+            <h2>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+              Вход в кабинет
+            </h2>
+            <p class="login-card__sub">Логин и пароль, указанные при регистрации.</p>
 
-          <div class="demo-hint" data-already-auth hidden style="background:var(--green-soft);border-color:rgba(40,167,69,.45);color:#1c7a33">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
-            <span>Вы уже вошли как <b data-already-who>курсант</b>.<br><a href="account.html" data-already-link>Перейти в кабинет →</a></span>
-          </div>
-
-          <form id="loginForm" novalidate>
-            <div class="field">
-              <label class="field__label" for="loginLogin">Логин <span class="req">*</span></label>
-              <input class="input" id="loginLogin" name="login" type="text" placeholder="Например, demo26" autocomplete="username" data-rule="login" required>
-              <span class="error-text" role="alert"></span>
+            <div class="demo-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
+              <span>Курсант: <code>demo26</code> / <code>Demo2026</code><br>Администратор: <code>Admin26</code> / <code>Demo20</code></span>
             </div>
 
-            <div class="field">
-              <label class="field__label" for="loginPassword">Пароль <span class="req">*</span></label>
-              <div class="input-wrap">
-                <input class="input" id="loginPassword" name="password" type="password" placeholder="Минимум 8 символов" autocomplete="current-password" required>
-                <button class="input-wrap__btn" type="button" data-toggle-password="loginPassword" aria-label="Показать пароль">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
-                </button>
+            <div class="demo-hint demo-hint--ok" data-already-auth hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+              <span>Вы уже вошли как <b data-already-who>курсант</b>.<br><a href="account.html" data-already-link>Перейти в кабинет →</a></span>
+            </div>
+
+            <form id="loginForm" novalidate>
+              <div class="field">
+                <label class="field__label" for="loginLogin">Логин <span class="req">*</span></label>
+                <input class="input" id="loginLogin" name="login" type="text" placeholder="Например, demo26" autocomplete="username" data-rule="login" required>
+                <span class="error-text" role="alert"></span>
               </div>
-              <span class="error-text" role="alert"></span>
-            </div>
 
-            <div class="form-actions">
-              <button class="btn btn--primary btn--block" type="submit">Войти в кабинет</button>
-            </div>
-          </form>
+              <div class="field">
+                <label class="field__label" for="loginPassword">Пароль <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input" id="loginPassword" name="password" type="password" placeholder="Минимум 8 символов" autocomplete="current-password" required>
+                  <button class="input-wrap__btn" type="button" data-toggle-password="loginPassword" aria-label="Показать пароль">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+                  </button>
+                </div>
+                <span class="error-text" role="alert"></span>
+              </div>
 
-          <p class="auth-switch">Еще не зарегистрированы? <a href="register.html">Регистрация</a></p>
-          <p class="form-note">Нажимая «Войти», вы принимаете правила школы и политику обработки персональных данных.</p>
+              <div class="form-actions">
+                <button class="btn btn--primary btn--block" type="submit">Войти в кабинет</button>
+              </div>
+            </form>
+
+            <p class="auth-switch">Еще не зарегистрированы? <a href="register.html">Регистрация</a></p>
+            <p class="form-note">Нажимая «Войти», вы принимаете правила школы и политику обработки персональных данных.</p>
+          </div>
         </div>
       </div>
-    </div>
 
+      <svg class="hero__wave" viewBox="0 0 1440 62" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 40c160-24 280 18 440 10s280-34 440-22 300 26 460 18c40-2 80-6 100-8v24H0Z"/>
+      </svg>
+    </section>
 
-    <!-- Цифры школы -->
+    <!-- ЦИФРЫ -->
     <section class="stats-band" aria-label="Школа в цифрах">
-      <div class="container" style="padding-top:34px">
+      <div class="container">
         <div class="stats-band__card reveal">
           <div class="stats-band__item">
             <div class="stats-band__value"><b data-counter="18">0</b><span>лет</span></div>
@@ -137,7 +141,8 @@
         </div>
       </div>
     </section>
-    <!-- Направления -->
+
+    <!-- НАПРАВЛЕНИЯ -->
     <section class="section" id="courses">
       <div class="container">
         <div class="section__head section__head--center reveal">
@@ -149,12 +154,12 @@
         <div class="grid grid--3">
           <article class="transport-card reveal" data-transport="boat" style="--delay:0ms">
             <div class="transport-card__media">
-              <img src="img/transport-boat.jpg" alt="Катер на реке в ясный день" width="720" height="450" loading="lazy" decoding="async">
+              <img src="img/transport-boat.jpg" alt="Катер идёт по водохранилищу между горами" width="760" height="475" loading="lazy" decoding="async">
               <span class="transport-card__tag">Хит · старт каждую неделю</span>
             </div>
             <div class="transport-card__body">
               <h3>Катер</h3>
-              <p>Маневрирование, швартовка, расхождение и уверенность на волне — база для любого судоводителя.</p>
+              <p>Маневрирование, швартовка и уверенность на волне — база для любого судоводителя.</p>
               <ul class="spec-list">
                 <li><span>Длительность</span><b>6 недель</b></li>
                 <li><span>Практика на воде</span><b>12 часов</b></li>
@@ -169,12 +174,12 @@
 
           <article class="transport-card reveal" data-transport="liner" style="--delay:90ms">
             <div class="transport-card__media">
-              <img src="img/transport-liner.jpg" alt="Круизный лайнер проходит под мостом" width="720" height="450" loading="lazy" decoding="async">
-              <span class="transport-card__tag">Профи · для работы</span>
+              <img src="img/transport-liner.jpg" alt="Круизный лайнер проходит под арочным мостом" width="760" height="475" loading="lazy" decoding="async">
+              <span class="transport-card__tag">Профи · для работы на флоте</span>
             </div>
             <div class="transport-card__body">
               <h3>Круизный лайнер</h3>
-              <p>Пассажирские суда, навигация, радиосвязь и управление экипажем для тех, кто идёт работать на флот.</p>
+              <p>Пассажирские суда, навигация, радиосвязь и управление экипажем для будущих капитанов.</p>
               <ul class="spec-list">
                 <li><span>Длительность</span><b>9 недель</b></li>
                 <li><span>Практика на воде</span><b>18 часов</b></li>
@@ -189,12 +194,12 @@
 
           <article class="transport-card reveal" data-transport="yacht" style="--delay:180ms">
             <div class="transport-card__media">
-              <img src="img/transport-yacht.jpg" alt="Яхта идёт по заливу между зелёных берегов" width="720" height="450" loading="lazy" decoding="async">
+              <img src="img/transport-yacht.jpg" alt="Яхта идёт по изумрудной воде между зелёными берегами" width="760" height="475" loading="lazy" decoding="async">
               <span class="transport-card__tag">Премиум · малые группы</span>
             </div>
             <div class="transport-card__body">
               <h3>Яхта</h3>
-              <p>Управление яхтой, погода, безопасность на борту и навигация для владельцев собственных судов.</p>
+              <p>Управление яхтой, погода, безопасность на борту и навигация для владельцев судов.</p>
               <ul class="spec-list">
                 <li><span>Длительность</span><b>7 недель</b></li>
                 <li><span>Практика на воде</span><b>15 часов</b></li>
@@ -210,8 +215,112 @@
       </div>
     </section>
 
-    <!-- Отзывы -->
-    <section class="section section--surface" id="reviews">
+    <!-- СЛАЙДЕР -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="grid grid--2" style="align-items:center;gap:46px">
+          <div class="reveal">
+            <span class="eyebrow">Атмосфера школы</span>
+            <h2>Река, город и практика, к которой хочется возвращаться</h2>
+            <p class="lead" style="margin-bottom:22px">Учебные маршруты проходят по Неве, каналам и Финскому заливу. Слайдер переключается каждые 3 секунды, но вы всегда можете листать вручную.</p>
+            <ul class="spec-list" style="max-width:400px">
+              <li><span>Учебные суда</span><b>6 единиц</b></li>
+              <li><span>Инструкторы</span><b>стаж от 8 лет</b></li>
+              <li><span>Группы</span><b>до 6 человек</b></li>
+            </ul>
+            <div class="mt-24">
+              <a class="link-arrow" href="register.html">Создать аккаунт
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="slider reveal" data-slider data-interval="3000" role="region" aria-roledescription="карусель" aria-label="Фотографии обучения">
+            <div class="slider__viewport">
+              <div class="slider__track">
+                <figure class="slider__slide">
+                  <img src="img/slide-1.jpg" alt="Катер у набережной Санкт-Петербурга" width="1000" height="667" decoding="async">
+                  <span class="badge badge--white slide-badge">Маршрут</span>
+                  <figcaption class="slider__caption">
+                    <h3>Каналы и набережные</h3>
+                    <p>Учимся читать фарватер в городской акватории</p>
+                  </figcaption>
+                </figure>
+                <figure class="slider__slide">
+                  <img src="img/slide-2.jpg" alt="Пассажирское судно на реке" width="1000" height="667" loading="lazy" decoding="async">
+                  <span class="badge badge--white slide-badge">Практика</span>
+                  <figcaption class="slider__caption">
+                    <h3>Большая вода</h3>
+                    <p>Выходы на Неву и в Финский залив с инструктором</p>
+                  </figcaption>
+                </figure>
+                <figure class="slider__slide">
+                  <img src="img/slide-3.jpg" alt="Круизный лайнер под мостом" width="1000" height="667" loading="lazy" decoding="async">
+                  <span class="badge badge--white slide-badge">Лайнеры</span>
+                  <figcaption class="slider__caption">
+                    <h3>Пассажирский флот</h3>
+                    <p>Практика на судне класса «река — море»</p>
+                  </figcaption>
+                </figure>
+                <figure class="slider__slide">
+                  <img src="img/slide-4.jpg" alt="Вид с носа деревянной лодки на закат" width="1000" height="667" loading="lazy" decoding="async">
+                  <span class="badge badge--white slide-badge">Флот школы</span>
+                  <figcaption class="slider__caption">
+                    <h3>Свои суда</h3>
+                    <p>Катера и яхты, подготовленные для занятий</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <button class="slider__nav slider__nav--prev" type="button" aria-label="Предыдущий слайд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
+              </button>
+              <button class="slider__nav slider__nav--next" type="button" aria-label="Следующий слайд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
+              </button>
+              <div class="slider__dots"></div>
+              <div class="slider__progress" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ШАГИ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Как проходит обучение</span>
+          <h2>От заявки до первого самостоятельного выхода</h2>
+          <p class="lead">Четыре шага, которые проходят все курсанты. Заявку проверяет администратор и подтверждает старт группы.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal" style="--delay:0ms">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <h3>Заявка онлайн</h3>
+            <p>Выбираете транспорт, дату старта, удобное время и способ оплаты в кабинете.</p>
+          </div>
+          <div class="step reveal" style="--delay:90ms">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6l8-3Z"/><path d="m8.6 12 2.4 2.4 4.4-4.4"/></svg>
+            <h3>Согласование</h3>
+            <p>Администратор проверяет заявку и переводит её в статус «Идет обучение».</p>
+          </div>
+          <div class="step reveal" style="--delay:180ms">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h18l-2.4 5H5.4L3 14Z"/><path d="M6 14V8.5L12 4l2.5 4.5"/></svg>
+            <h3>Теория и вода</h3>
+            <p>Класс на набережной и практика на судне с инструктором в малой группе.</p>
+          </div>
+          <div class="step reveal" style="--delay:270ms">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.45 6.2 20.5l1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>
+            <h3>Экзамен и отзыв</h3>
+            <p>Внутренний экзамен, завершение обучения и отзыв в личном кабинете.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="section section--soft" id="reviews">
       <div class="container">
         <div class="section__head section__head--center reveal">
           <span class="eyebrow">Отзывы выпускников</span>
@@ -222,45 +331,10 @@
       </div>
     </section>
 
-
-    <!-- Как проходит обучение -->
-    <section class="section section--surface" id="how">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Как проходит обучение</span>
-          <h2>От заявки до первого самостоятельного выхода</h2>
-          <p class="lead">Четыре шага, которые проходят все курсанты школы. Заявку проверяет администратор и подтверждает старт группы.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step reveal" style="--delay:0ms">
-            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-            <h3>Заявка онлайн</h3>
-            <p>Выбираете транспорт, дату старта, удобное время и способ оплаты в личном кабинете.</p>
-          </div>
-          <div class="step reveal" style="--delay:90ms">
-            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6l8-3Z"/><path d="m8.6 12 2.4 2.4 4.4-4.4"/></svg>
-            <h3>Согласование</h3>
-            <p>Администратор проверяет заявку и переводит её в статус «Идет обучение».</p>
-          </div>
-          <div class="step reveal" style="--delay:180ms">
-            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h18l-2.4 5H5.4L3 14Z"/><path d="M6 14V8.5L12 4l2.5 4.5"/></svg>
-            <h3>Теория и вода</h3>
-            <p>Занятия в классе на набережной и практика на судне с инструктором в малой группе.</p>
-          </div>
-          <div class="step reveal" style="--delay:270ms">
-            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.45 6.2 20.5l1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>
-            <h3>Экзамен и отзыв</h3>
-            <p>Сдаёте внутренний экзамен, администратор завершает обучение — и вы оставляете отзыв.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Вопросы -->
+    <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container">
-        <div class="grid grid--2" style="gap:44px;align-items:start">
+        <div class="grid grid--2" style="gap:46px;align-items:start">
           <div class="reveal">
             <span class="eyebrow">Вопросы и ответы</span>
             <h2>Коротко о главном</h2>
@@ -269,6 +343,7 @@
               <a class="btn btn--ghost btn--sm" href="register.html">Создать аккаунт</a>
               <a class="btn btn--ghost btn--sm" href="request.html">Оставить заявку</a>
             </div>
+            <img src="img/detail.jpg" alt="Скоростной катер на воде" width="1000" height="700" loading="lazy" decoding="async" style="margin-top:28px;border-radius:18px;box-shadow:0 18px 40px rgba(10,61,99,.16)">
           </div>
 
           <div class="faq reveal">
@@ -288,6 +363,10 @@
               <button class="faq__q" type="button" aria-expanded="false">Как узнать статус заявки?</button>
               <div class="faq__a"><div><p>Всё видно в личном кабинете: «Новая», «Идет обучение» или «Обучение завершено». Статус меняет администратор после проверки заявки.</p></div></div>
             </div>
+            <div class="faq__item">
+              <button class="faq__q" type="button" aria-expanded="false">Нужна ли своя экипировка?</button>
+              <div class="faq__a"><div><p>Нет. Спасательные жилеты и вся необходимая экипировка выдаются на занятии. С собой достаточно сменной обуви и одежды по погоде.</p></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -297,7 +376,7 @@
     <section class="section section--tight">
       <div class="container">
         <div class="cta-band reveal">
-          <img src="img/band.jpg" alt="Катера у причала на набережной" width="1280" height="560" loading="lazy" decoding="async">
+          <img src="img/band.jpg" alt="Катера у причала на набережной" width="1440" height="600" loading="lazy" decoding="async">
           <div class="cta-band__inner">
             <div>
               <h2>Ближайший поток стартует через неделю</h2>
@@ -305,7 +384,7 @@
             </div>
             <div class="cta-band__actions">
               <a class="btn btn--primary" href="register.html">Создать аккаунт</a>
-              <a class="btn btn--light" href="index.html#courses">Выбрать курс</a>
+              <a class="btn btn--light" href="#courses">Выбрать курс</a>
             </div>
           </div>
         </div>
@@ -318,7 +397,7 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html">
-            <img src="img/logo-white.png" alt="" width="40" height="30" loading="lazy" decoding="async">
+            <img src="img/logo-white.png" alt="" width="38" height="30" loading="lazy" decoding="async">
             <span>Водить.РФ<small>школа речного транспорта</small></span>
           </a>
           <p>Очное обучение вождению катеров, круизных лайнеров и яхт. Практика на Неве и в Финском заливе с 2007 года.</p>

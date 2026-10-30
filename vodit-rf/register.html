@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Регистрация курсанта — Водить.РФ</title>
-  <meta name="description" content="Регистрация в школе вождения речного транспорта «Водить.РФ»: личный кабинет, заявки на обучение катера, лайнера и яхты.">
+  <meta name="description" content="Регистрация в школе вождения речного транспорта «Водить.РФ»: личный кабинет, заявки на обучение катера, лайнера и яхты, отзывы выпускников.">
   <meta name="theme-color" content="#007BFF">
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="register">
@@ -15,13 +17,13 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
-        <img src="img/logo.png" alt="" width="40" height="30" decoding="async">
+        <img src="img/logo.png" alt="" width="38" height="30" decoding="async">
         <span>Водить.РФ<small>школа речного транспорта</small></span>
       </a>
 
       <nav class="nav" id="mainNav" aria-label="Основная навигация">
         <ul class="nav__list">
-          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="index.html">Вход</a></li>
           <li><a class="nav__link" href="index.html#courses">Направления</a></li>
           <li><a class="nav__link" href="account.html">Кабинет</a></li>
           <li><a class="nav__link" href="request.html">Заявка</a></li>
@@ -40,21 +42,21 @@
   <main id="main">
     <div class="auth">
       <aside class="auth__aside">
-        <img src="img/auth-photo.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="870" height="1160" fetchpriority="high" decoding="async">
+        <img src="img/auth-photo.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="1200" height="900" fetchpriority="high" decoding="async">
         <span class="badge badge--white" style="align-self:flex-start;margin-bottom:auto">Новый курсант</span>
         <h2>Один аккаунт — весь путь до прав судоводителя</h2>
         <p>После регистрации доступны заявки на обучение, история статусов и отзывы о пройденных курсах.</p>
         <div class="hero__facts">
           <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
             Бесплатная регистрация
           </span>
           <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
             Данные защищены
           </span>
           <span class="hero__fact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
             3 минуты на форму
           </span>
         </div>
@@ -63,7 +65,7 @@
       <div class="auth__panel">
         <div class="auth-card">
           <nav class="breadcrumbs" aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a><span class="sep">/</span><span>Регистрация</span>
+            <a href="index.html">Водить.РФ</a><span class="sep">/</span><span>Регистрация</span>
           </nav>
 
           <div class="auth-card__head">
@@ -75,7 +77,7 @@
             <div class="form-grid">
               <div class="field field--full">
                 <label class="field__label" for="regLogin">Логин <span class="req">*</span></label>
-                <input class="input" id="regLogin" name="login" type="text" placeholder="latinitsy_i_1" autocomplete="username" inputmode="latin" data-rule="login" required>
+                <input class="input" id="regLogin" name="login" type="text" placeholder="Например, morehod26" autocomplete="username" data-rule="login" required>
                 <span class="field__hint">Латинские буквы и цифры, минимум 6 символов, без пробелов.</span>
                 <span class="error-text" role="alert"></span>
               </div>
@@ -154,7 +156,7 @@
     <div class="container">
       <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
         <span>© <span data-year>2026</span> Водить.РФ · Учебный проект</span>
-        <span><a href="index.html">На главную</a> · <a href="index.html">Вход</a> · <a href="admin.html">Администратору</a></span>
+        <span><a href="index.html">Вход</a> · <a href="account.html">Личный кабинет</a> · <a href="admin.html">Администратору</a></span>
       </div>
     </div>
   </footer>

@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Оформление заявки на обучение — Водить.РФ</title>
-  <meta name="description" content="Онлайн-заявка на обучение вождению речного транспорта: катер, круизный лайнер или яхта. Выберите дату старта, время и способ оплаты.">
+  <meta name="description" content="Онлайн-заявка на обучение вождению речного транспорта: катер, круизный лайнер или яхта. Выберите дату старта, удобное время и способ оплаты.">
   <meta name="theme-color" content="#007BFF">
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="request">
@@ -15,16 +17,16 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
-        <img src="img/logo.png" alt="" width="40" height="30" decoding="async">
+        <img src="img/logo.png" alt="" width="38" height="30" decoding="async">
         <span>Водить.РФ<small>школа речного транспорта</small></span>
       </a>
 
       <nav class="nav" id="mainNav" aria-label="Основная навигация">
         <ul class="nav__list">
-          <li><a class="nav__link" href="index.html">Главная</a></li>
           <li><a class="nav__link" href="index.html#courses">Направления</a></li>
           <li><a class="nav__link" href="account.html">Мой кабинет</a></li>
           <li><a class="nav__link is-active" href="request.html" aria-current="page">Заявка</a></li>
+          <li><a class="nav__link" href="index.html#faq">Вопросы</a></li>
         </ul>
       </nav>
 
@@ -41,7 +43,7 @@
     <div class="page-head">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
-          <a href="index.html">Главная</a><span class="sep">/</span><a href="account.html">Личный кабинет</a><span class="sep">/</span><span>Новая заявка</span>
+          <a href="index.html">Водить.РФ</a><span class="sep">/</span><a href="account.html">Личный кабинет</a><span class="sep">/</span><span>Новая заявка</span>
         </nav>
         <h1>Заявка на обучение</h1>
         <p>Выберите транспорт, дату старта и способ оплаты. Заявка сразу уйдёт администратору на согласование.</p>
@@ -111,7 +113,7 @@
                 <div class="form-section__title"><i>4</i> Пожелания</div>
                 <div class="field">
                   <label class="field__label" for="reqComment">Комментарий <span class="xs">— необязательно</span></label>
-                  <textarea class="textarea" id="reqComment" name="comment" rows="3" placeholder="Например: нужна группа выходного дня или опыт вождения автомобиля"></textarea>
+                  <textarea class="textarea" id="reqComment" name="comment" rows="3" placeholder="Например: нужна группа выходного дня или есть опыт управления лодкой"></textarea>
                 </div>
                 <div class="field">
                   <label class="checkbox">
@@ -147,7 +149,7 @@
         <!-- Сводка -->
         <aside class="summary card">
           <div class="summary__media">
-            <img src="img/transport-boat.jpg" alt="Катер" width="720" height="450" data-summary-image>
+            <img src="img/transport-boat.jpg" alt="Катер" width="760" height="475" data-summary-image>
             <span class="summary__label">Ваш выбор</span>
           </div>
           <div class="summary__body">
@@ -167,6 +169,13 @@
               <span>Оплата после подтверждения заявки. Рассрочка 0% доступна на 6 месяцев без переплаты.</span>
             </div>
           </div>
+          <div class="card" style="margin-top:18px;overflow:hidden">
+            <img src="img/request-photo.jpg" alt="Спортивный катер на воде" width="1200" height="760" loading="lazy" decoding="async" style="width:100%;height:150px;object-fit:cover">
+            <div style="padding:16px 18px">
+              <div class="xs" style="margin-bottom:4px">Практика на воде</div>
+              <p style="margin:0;font-size:13px;color:var(--ink-2)">12–18 часов на судне с инструктором. Группы до 6 человек, спасательные жилеты выдаём на месте.</p>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
@@ -176,7 +185,7 @@
     <div class="container">
       <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
         <span>© <span data-year>2026</span> Водить.РФ · Учебный проект</span>
-        <span><a href="index.html">На главную</a> · <a href="account.html">Мои заявки</a> · <a href="index.html#faq">Вопросы</a></span>
+        <span><a href="index.html">Главная</a> · <a href="account.html">Мои заявки</a> · <a href="index.html#faq">Вопросы</a></span>
       </div>
     </div>
   </footer>

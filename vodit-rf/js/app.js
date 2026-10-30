@@ -585,6 +585,22 @@
     });
   }
 
+
+  /* ---------------- 5.5. Страховка для изображений ---------------- */
+  function initImageFallback() {
+    const mark = (img) => {
+      img.dataset.broken = "true";
+      img.setAttribute("aria-hidden", "true");
+    };
+    $$("img").forEach((img) => {
+      if (img.complete && img.naturalWidth === 0) mark(img);
+      img.addEventListener("error", () => mark(img));
+      img.addEventListener("load", () => {
+        delete img.dataset.broken;
+      });
+    });
+  }
+
   /* ---------------- 6. Слайдер ---------------- */
   function initSlider(root) {
     if (!root) return;
@@ -772,7 +788,9 @@
   function initReveal() {
     const items = $$(".reveal");
     if (!items.length) return;
-    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reduceMotion =
+      typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!("IntersectionObserver" in window) || reduceMotion) {
       items.forEach((el) => el.classList.add("is-visible"));
       return;
     }
@@ -848,7 +866,6 @@
   }
 
   function initHome() {
-    renderPublicReviews();
     $$(".transport-card").forEach((card) => {
       const link = $("[data-request-link]", card);
       if (link) {
@@ -984,7 +1001,6 @@
   function initRegister() {
     const form = $("#registerForm");
     if (!form) return;
-    attachPasswordToggle();
     initLiveValidation(form);
     maskDate($("#regBirth"));
     maskPhone($("#regPhone"));
@@ -1291,7 +1307,7 @@
   function initRequestPage() {
     const session = getSession();
     if (!session || session.role !== "user") {
-      goLogin("request.html");
+      goLogin("request.html" + (window.location.search || ""));
       return;
     }
     const user = getUser(session.userId);
@@ -1748,6 +1764,7 @@
     attachPasswordToggle();
     $$("[data-slider]").forEach(initSlider);
     initCounters();
+    initImageFallback();
     $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
     const page = document.body.dataset.page;

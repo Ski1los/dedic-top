@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Личный кабинет — Водить.РФ</title>
-  <meta name="description" content="Личный кабинет курсанта школы «Водить.РФ»: история заявок на обучение, статусы согласования и отзывы о курсах.">
+  <meta name="description" content="Личный кабинет курсанта школы «Водить.РФ»: история заявок на обучение, статусы согласования и отзывы о пройденных курсах.">
   <meta name="theme-color" content="#007BFF">
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="account">
@@ -15,16 +17,16 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
-        <img src="img/logo.png" alt="" width="40" height="30" decoding="async">
+        <img src="img/logo.png" alt="" width="38" height="30" decoding="async">
         <span>Водить.РФ<small>школа речного транспорта</small></span>
       </a>
 
       <nav class="nav" id="mainNav" aria-label="Основная навигация">
         <ul class="nav__list">
-          <li><a class="nav__link" href="index.html">Главная</a></li>
           <li><a class="nav__link" href="index.html#courses">Направления</a></li>
           <li><a class="nav__link is-active" href="account.html" aria-current="page">Мой кабинет</a></li>
           <li><a class="nav__link" href="request.html">Новая заявка</a></li>
+          <li><a class="nav__link" href="index.html#faq">Вопросы</a></li>
         </ul>
       </nav>
 
@@ -41,7 +43,7 @@
     <div class="page-head">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
-          <a href="index.html">Главная</a><span class="sep">/</span><span>Личный кабинет</span>
+          <a href="index.html">Водить.РФ</a><span class="sep">/</span><span>Личный кабинет</span>
         </nav>
         <h1>Личный кабинет</h1>
         <p>История ваших заявок, статусы согласования и отзывы о пройденных курсах.</p>
@@ -74,7 +76,7 @@
             </div>
             <div class="profile-card__foot">
               <a class="btn btn--primary btn--block btn--sm" href="request.html">Новая заявка</a>
-              <button class="btn btn--ghost btn--block btn--sm mt-8" type="button" data-action="logout">Выйти из аккаунта</button>
+              <button class="btn btn--ghost btn--block btn--sm" type="button" data-action="logout">Выйти из аккаунта</button>
             </div>
           </div>
         </aside>
@@ -82,7 +84,7 @@
         <!-- Контент -->
         <div class="account__main">
           <section class="account-hero">
-            <img src="img/account-hero.jpg" alt="" width="1000" height="563" loading="lazy" decoding="async">
+            <img src="img/account-hero.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async">
             <div>
               <h2>С возвращением на борт!</h2>
               <p>Активные заявки и отзывы всегда под рукой.</p>
@@ -95,44 +97,44 @@
           </section>
 
           <!-- Слайдер -->
-          <section class="card" aria-label="Атмосфера школы" style="padding:18px">
-            <div class="panel-head" style="padding:4px 6px 0;margin-bottom:14px">
+          <section class="card" aria-label="Атмосфера школы" style="padding:16px">
+            <div class="panel-head" style="padding:4px 8px 0;margin-bottom:14px">
               <h2 style="font-size:18px;font-weight:500">Атмосфера школы</h2>
               <span class="xs">Слайды меняются каждые 3 секунды</span>
             </div>
             <div class="slider" data-slider data-interval="3000" role="region" aria-roledescription="карусель" aria-label="Фотографии обучения">
               <div class="slider__viewport">
                 <div class="slider__track">
-                  <figure class="slider__slide" style="margin:0">
-                    <img src="img/slide-1.jpg" alt="Прогулочный теплоход у набережной" width="900" height="600" decoding="async">
+                  <figure class="slider__slide">
+                    <img src="img/slide-1.jpg" alt="Катер у набережной Санкт-Петербурга" width="1000" height="667" decoding="async">
                     <span class="badge badge--white slide-badge">Маршрут</span>
                     <figcaption class="slider__caption">
                       <h3>Каналы и набережные</h3>
                       <p>Городская акватория и работа с фарватером</p>
                     </figcaption>
                   </figure>
-                  <figure class="slider__slide" style="margin:0">
-                    <img src="img/slide-2.jpg" alt="Теплоход с пассажирами на Неве" width="900" height="600" loading="lazy" decoding="async">
+                  <figure class="slider__slide">
+                    <img src="img/slide-2.jpg" alt="Пассажирское судно на реке" width="1000" height="667" loading="lazy" decoding="async">
                     <span class="badge badge--white slide-badge">Практика</span>
                     <figcaption class="slider__caption">
                       <h3>Большая вода</h3>
                       <p>Выходы на Неву и в Финский залив</p>
                     </figcaption>
                   </figure>
-                  <figure class="slider__slide" style="margin:0">
-                    <img src="img/slide-3.jpg" alt="Моторная лодка на песчаном берегу" width="900" height="600" loading="lazy" decoding="async">
-                    <span class="badge badge--white slide-badge">Флот</span>
-                    <figcaption class="slider__caption">
-                      <h3>Суда школы</h3>
-                      <p>Катера и яхты, готовые к занятиям</p>
-                    </figcaption>
-                  </figure>
-                  <figure class="slider__slide" style="margin:0">
-                    <img src="img/slide-4.jpg" alt="Пассажирское судно на реке" width="900" height="600" loading="lazy" decoding="async">
+                  <figure class="slider__slide">
+                    <img src="img/slide-3.jpg" alt="Круизный лайнер под мостом" width="1000" height="667" loading="lazy" decoding="async">
                     <span class="badge badge--white slide-badge">Лайнеры</span>
                     <figcaption class="slider__caption">
                       <h3>Пассажирский флот</h3>
                       <p>Практика на судне класса «река — море»</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="slider__slide">
+                    <img src="img/slide-4.jpg" alt="Вид с носа деревянной лодки на закат" width="1000" height="667" loading="lazy" decoding="async">
+                    <span class="badge badge--white slide-badge">Флот</span>
+                    <figcaption class="slider__caption">
+                      <h3>Суда школы</h3>
+                      <p>Катера и яхты, готовые к занятиям</p>
                     </figcaption>
                   </figure>
                 </div>
