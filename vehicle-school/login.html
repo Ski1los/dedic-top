@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход в личный кабинет — Водить.РФ</title>
+  <meta name="description" content="Вход в личный кабинет школы вождения речного транспорта «Водить.РФ»: заявки на обучение, статусы и отзывы.">
+  <meta name="theme-color" content="#007BFF">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
+        <img src="assets/img/logo.png" alt="" width="40" height="30" decoding="async">
+        <span>Водить.РФ<small>школа речного транспорта</small></span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="index.html#courses">Направления</a></li>
+          <li><a class="nav__link" href="account.html">Кабинет</a></li>
+          <li><a class="nav__link" href="request.html">Заявка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" data-header-actions>
+        <a class="btn btn--ghost btn--sm" href="login.html" aria-current="page">Войти</a>
+        <a class="btn btn--primary btn--sm" href="register.html">Регистрация</a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="auth">
+      <aside class="auth__aside">
+        <img src="assets/img/auth-aside.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="870" height="1160" fetchpriority="high" decoding="async">
+        <span class="badge badge--white" style="align-self:flex-start;margin-bottom:auto">Личный кабинет курсанта</span>
+        <h2>Ваши заявки, статусы и отзывы — в одном месте</h2>
+        <p>Войдите, чтобы видеть историю обучения, следить за согласованием заявок и оставлять отзывы после выпуска.</p>
+        <div class="hero__facts">
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            История заявок
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Отзывы о курсах
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Запись за 2 минуты
+          </span>
+        </div>
+      </aside>
+
+      <div class="auth__panel">
+        <div class="auth-card">
+          <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a><span class="sep">/</span><span>Вход</span>
+          </nav>
+
+          <div class="auth-card__head">
+            <h1>Вход в кабинет</h1>
+            <p>Введите логин и пароль, указанные при регистрации.</p>
+          </div>
+
+          <div class="demo-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
+            <span>Демо-доступ курсанта: <code>demo26</code> / <code>Demo2026</code><br>Администратор: <code>Admin26</code> / <code>Demo20</code></span>
+          </div>
+
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label class="field__label" for="loginLogin">Логин <span class="req">*</span></label>
+              <input class="input" id="loginLogin" name="login" type="text" placeholder="Например, demo26" autocomplete="username" data-rule="login" required>
+              <span class="error-text" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="loginPassword">Пароль <span class="req">*</span></label>
+              <div class="input-wrap">
+                <input class="input" id="loginPassword" name="password" type="password" placeholder="Минимум 8 символов" autocomplete="current-password" required>
+                <button class="input-wrap__btn" type="button" data-toggle-password="loginPassword" aria-label="Показать пароль">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+                </button>
+              </div>
+              <span class="error-text" role="alert"></span>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary btn--block" type="submit">Войти в кабинет</button>
+            </div>
+          </form>
+
+          <p class="auth-switch">Еще не зарегистрированы? <a href="register.html">Регистрация</a></p>
+          <p class="form-note">Нажимая «Войти», вы принимаете правила школы и политику обработки персональных данных.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+        <span>© <span data-year>2026</span> Водить.РФ · Учебный проект</span>
+        <span><a href="index.html">На главную</a> · <a href="register.html">Регистрация</a> · <a href="admin.html">Администратору</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

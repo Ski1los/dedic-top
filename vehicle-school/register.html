@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация курсанта — Водить.РФ</title>
+  <meta name="description" content="Регистрация в школе вождения речного транспорта «Водить.РФ»: личный кабинет, заявки на обучение катера, лайнера и яхты.">
+  <meta name="theme-color" content="#007BFF">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
+        <img src="assets/img/logo.png" alt="" width="40" height="30" decoding="async">
+        <span>Водить.РФ<small>школа речного транспорта</small></span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="index.html#courses">Направления</a></li>
+          <li><a class="nav__link" href="account.html">Кабинет</a></li>
+          <li><a class="nav__link" href="request.html">Заявка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" data-header-actions>
+        <a class="btn btn--ghost btn--sm" href="login.html">Войти</a>
+        <a class="btn btn--primary btn--sm" href="register.html" aria-current="page">Регистрация</a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="auth">
+      <aside class="auth__aside">
+        <img src="assets/img/auth-aside.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="870" height="1160" fetchpriority="high" decoding="async">
+        <span class="badge badge--white" style="align-self:flex-start;margin-bottom:auto">Новый курсант</span>
+        <h2>Один аккаунт — весь путь до прав судоводителя</h2>
+        <p>После регистрации доступны заявки на обучение, история статусов и отзывы о пройденных курсах.</p>
+        <div class="hero__facts">
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Бесплатная регистрация
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Данные защищены
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            3 минуты на форму
+          </span>
+        </div>
+      </aside>
+
+      <div class="auth__panel">
+        <div class="auth-card">
+          <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a><span class="sep">/</span><span>Регистрация</span>
+          </nav>
+
+          <div class="auth-card__head">
+            <h1>Регистрация</h1>
+            <p>Заполните все поля — логин должен быть уникальным.</p>
+          </div>
+
+          <form id="registerForm" novalidate>
+            <div class="form-grid">
+              <div class="field field--full">
+                <label class="field__label" for="regLogin">Логин <span class="req">*</span></label>
+                <input class="input" id="regLogin" name="login" type="text" placeholder="latinitsy_i_1" autocomplete="username" inputmode="latin" data-rule="login" required>
+                <span class="field__hint">Латинские буквы и цифры, минимум 6 символов, без пробелов.</span>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="regPassword">Пароль <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input" id="regPassword" name="password" type="password" placeholder="От 8 символов" autocomplete="new-password" data-rule="password" required>
+                  <button class="input-wrap__btn" type="button" data-toggle-password="regPassword" aria-label="Показать пароль">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+                  </button>
+                </div>
+                <div class="password-meter" id="passwordMeter" data-level="0" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span class="field__hint">Минимум 8 символов, буквы и цифры.</span>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="regPassword2">Повторите пароль <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <input class="input" id="regPassword2" name="password2" type="password" placeholder="Ещё раз" autocomplete="new-password" required>
+                  <button class="input-wrap__btn" type="button" data-toggle-password="regPassword2" aria-label="Показать пароль">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+                  </button>
+                </div>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="regFullName">ФИО <span class="req">*</span></label>
+                <input class="input" id="regFullName" name="fullName" type="text" placeholder="Иванов Иван Иванович" autocomplete="name" data-rule="fullName" required>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="regBirth">Дата рождения <span class="req">*</span></label>
+                <input class="input" id="regBirth" name="birthDate" type="text" placeholder="ДД.ММ.ГГГГ" inputmode="numeric" maxlength="10" autocomplete="bday" data-rule="birthDate" required>
+                <span class="field__hint">Формат ДД.ММ.ГГГГ, обучение с 16 лет.</span>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="regPhone">Телефон <span class="req">*</span></label>
+                <input class="input" id="regPhone" name="phone" type="tel" placeholder="+7 (999) 123-45-67" inputmode="tel" autocomplete="tel" data-rule="phone" required>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="regEmail">E-mail <span class="req">*</span></label>
+                <input class="input" id="regEmail" name="email" type="email" placeholder="name@mail.ru" autocomplete="email" data-rule="email" required>
+                <span class="field__hint">На этот адрес придёт подтверждение заявки.</span>
+                <span class="error-text" role="alert"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="checkbox">
+                  <input id="regConsent" name="consent" type="checkbox" required>
+                  <span>Согласен на обработку персональных данных и принимаю правила школы</span>
+                </label>
+                <span class="error-text" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary btn--block" type="submit">Создать аккаунт</button>
+            </div>
+          </form>
+
+          <p class="auth-switch">Уже зарегистрированы? <a href="login.html">Вход</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+        <span>© <span data-year>2026</span> Водить.РФ · Учебный проект</span>
+        <span><a href="index.html">На главную</a> · <a href="login.html">Вход</a> · <a href="admin.html">Администратору</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

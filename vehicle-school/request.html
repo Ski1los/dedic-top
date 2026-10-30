@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оформление заявки на обучение — Водить.РФ</title>
+  <meta name="description" content="Онлайн-заявка на обучение вождению речного транспорта: катер, круизный лайнер или яхта. Выберите дату старта, время и способ оплаты.">
+  <meta name="theme-color" content="#007BFF">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="request">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
+        <img src="assets/img/logo.png" alt="" width="40" height="30" decoding="async">
+        <span>Водить.РФ<small>школа речного транспорта</small></span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="index.html#courses">Направления</a></li>
+          <li><a class="nav__link" href="account.html">Мой кабинет</a></li>
+          <li><a class="nav__link is-active" href="request.html" aria-current="page">Заявка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" data-header-actions>
+        <a class="btn btn--ghost btn--sm" href="login.html">Войти</a>
+        <a class="btn btn--primary btn--sm" href="register.html">Регистрация</a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a><span class="sep">/</span><a href="account.html">Личный кабинет</a><span class="sep">/</span><span>Новая заявка</span>
+        </nav>
+        <h1>Заявка на обучение</h1>
+        <p>Выберите транспорт, дату старта и способ оплаты. Заявка сразу уйдёт администратору на согласование.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="request-layout">
+        <!-- Форма -->
+        <div>
+          <div class="card form-card" id="formCard">
+            <form id="requestForm" novalidate>
+              <div class="form-section">
+                <div class="form-section__title"><i>1</i> Программа обучения</div>
+                <div class="field">
+                  <label class="field__label" for="reqTransport">Вид транспорта <span class="req">*</span></label>
+                  <select class="select" id="reqTransport" name="transport" data-rule="transport" required>
+                    <option value="">— выберите направление —</option>
+                    <option value="boat">Катер · 24 000 ₽ · 6 недель</option>
+                    <option value="liner">Круизный лайнер · 39 000 ₽ · 9 недель</option>
+                    <option value="yacht">Яхта · 32 000 ₽ · 7 недель</option>
+                  </select>
+                  <span class="field__hint">Программы различаются практикой и итоговым документом.</span>
+                  <span class="error-text" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-section__title"><i>2</i> Старт занятий</div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label class="field__label" for="reqDate">Дата начала <span class="req">*</span></label>
+                    <input class="input" id="reqDate" name="date" type="text" placeholder="ДД.ММ.ГГГГ" inputmode="numeric" maxlength="10" data-rule="date" required>
+                    <span class="field__hint">Формат ДД.ММ.ГГГГ, запись на 6 месяцев вперёд.</span>
+                    <span class="error-text" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="reqTime">Удобное время <span class="req">*</span></label>
+                    <select class="select" id="reqTime" name="time" data-rule="time" required>
+                      <option value="">— выберите слот —</option>
+                      <option value="morning">Утро · 09:00–12:00</option>
+                      <option value="day">День · 12:00–17:00</option>
+                      <option value="evening">Вечер · 18:00–21:00</option>
+                      <option value="weekend">Выходные · 10:00–15:00</option>
+                    </select>
+                    <span class="error-text" role="alert"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-section__title"><i>3</i> Оплата</div>
+                <div class="field">
+                  <label class="field__label" for="reqPayment">Способ оплаты <span class="req">*</span></label>
+                  <select class="select" id="reqPayment" name="payment" data-rule="payment" required>
+                    <option value="">— выберите способ —</option>
+                    <option value="card">Банковская карта онлайн</option>
+                    <option value="invoice">Счёт для юридического лица</option>
+                    <option value="cash">Наличными в офисе</option>
+                    <option value="installments">Рассрочка 0% на 6 месяцев</option>
+                  </select>
+                  <span class="error-text" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-section__title"><i>4</i> Пожелания</div>
+                <div class="field">
+                  <label class="field__label" for="reqComment">Комментарий <span class="xs">— необязательно</span></label>
+                  <textarea class="textarea" id="reqComment" name="comment" rows="3" placeholder="Например: нужна группа выходного дня или опыт вождения автомобиля"></textarea>
+                </div>
+                <div class="field">
+                  <label class="checkbox">
+                    <input id="reqConsent" name="consent" type="checkbox" required>
+                    <span>Подтверждаю данные и согласен на обработку персональных данных</span>
+                  </label>
+                  <span class="error-text" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn--primary btn--block" type="submit">Отправить заявку на согласование</button>
+              </div>
+              <p class="form-note">Заявка получит статус «Новая». Администратор проверит её и переведёт в обучение.</p>
+            </form>
+
+            <!-- Экран успеха -->
+            <div class="success-card" id="requestSuccess" hidden>
+              <div class="success-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+              </div>
+              <h2>Заявка отправлена</h2>
+              <p>Администратор проверит данные и подтвердит старт группы. Статус заявки всегда виден в личном кабинете.</p>
+              <div class="success-card__num">Номер заявки: <b id="successNumber">№ —</b><br><span class="xs" id="successDetails"></span></div>
+              <div class="success-card__actions">
+                <a class="btn btn--primary" href="account.html">Перейти в кабинет</a>
+                <button class="btn btn--ghost" type="button" data-new-request>Оформить ещё одну</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Сводка -->
+        <aside class="summary card">
+          <div class="summary__media">
+            <img src="assets/img/transport-boat.jpg" alt="Катер" width="720" height="450" data-summary-image>
+            <span class="summary__label">Ваш выбор</span>
+          </div>
+          <div class="summary__body">
+            <h3 data-summary-title>Катер</h3>
+            <div class="summary-list">
+              <div><span>Практика</span><b data-summary-hours>24 ак. часа</b></div>
+              <div><span>Старт</span><b data-summary-date>не выбрана</b></div>
+              <div><span>Время</span><b data-summary-time>не выбрано</b></div>
+              <div><span>Оплата</span><b data-summary-payment>не выбран</b></div>
+            </div>
+            <div class="summary__total">
+              <span>Итого за курс</span>
+              <b data-summary-price>0 ₽</b>
+            </div>
+            <div class="summary__note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
+              <span>Оплата после подтверждения заявки. Рассрочка 0% доступна на 6 месяцев без переплаты.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+        <span>© <span data-year>2026</span> Водить.РФ · Учебный проект</span>
+        <span><a href="index.html">На главную</a> · <a href="account.html">Мои заявки</a> · <a href="index.html#faq">Вопросы</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

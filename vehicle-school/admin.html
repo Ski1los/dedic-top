@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Панель администратора — Водить.РФ</title>
+  <meta name="description" content="Панель администратора школы «Водить.РФ»: проверка заявок на обучение, фильтры, сортировка и смена статусов.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#007BFF">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/rubik-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
+        <img src="assets/img/logo.png" alt="" width="40" height="30" decoding="async">
+        <span>Водить.РФ<small>панель управления</small></span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="index.html#courses">Направления</a></li>
+          <li><a class="nav__link" href="account.html">Кабинет</a></li>
+          <li><a class="nav__link is-active" href="admin.html" aria-current="page">Администратор</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" data-header-actions>
+        <a class="btn btn--ghost btn--sm" href="login.html">Войти</a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Вход в панель -->
+    <section class="admin-gate" data-admin-gate hidden>
+      <div class="auth-card">
+        <div class="admin-gate__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6l8-3Z"/><path d="m8.6 12 2.4 2.4 4.4-4.4"/></svg>
+        </div>
+        <h2>Панель администратора</h2>
+        <p class="muted" style="font-size:14.5px">Раздел защищён. Введите служебный логин и пароль.</p>
+
+        <div class="demo-hint" style="margin-top:18px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
+          <span>Демо-доступ: <code>Admin26</code> / <code>Demo20</code></span>
+        </div>
+
+        <form id="adminLoginForm" novalidate>
+          <div class="field">
+            <label class="field__label" for="adminLogin">Логин администратора</label>
+            <input class="input" id="adminLogin" name="login" type="text" placeholder="Admin26" autocomplete="username" required>
+            <span class="error-text" role="alert"></span>
+          </div>
+          <div class="field">
+            <label class="field__label" for="adminPassword">Пароль</label>
+            <div class="input-wrap">
+              <input class="input" id="adminPassword" name="password" type="password" placeholder="••••••" autocomplete="current-password" required>
+              <button class="input-wrap__btn" type="button" data-toggle-password="adminPassword" aria-label="Показать пароль">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+              </button>
+            </div>
+            <span class="error-text" role="alert"></span>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Войти в панель</button>
+        </form>
+
+        <p class="form-note">Доступ только для сотрудников школы. Все действия фиксируются.</p>
+      </div>
+    </section>
+
+    <!-- Рабочая область -->
+    <div class="admin-page" data-admin-app hidden>
+      <div class="container">
+        <div class="admin-top">
+          <div>
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+              <a href="index.html">Главная</a><span class="sep">/</span><span>Панель администратора</span>
+            </nav>
+            <h1>Заявки на обучение</h1>
+            <p>Проверяйте заявки и меняйте статусы: «Новая» → «Идет обучение» → «Обучение завершено».</p>
+          </div>
+          <div class="admin-user">
+            <span class="avatar">А</span>
+            <span>Администратор<br><b data-admin-login>Admin26</b></span>
+            <button class="icon-btn" type="button" data-admin-logout title="Выйти" aria-label="Выйти из панели">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Статистика -->
+        <div class="admin-stats">
+          <div class="stat-card stat-card--new">
+            <div class="stat-card__label"><i></i> Новые заявки</div>
+            <div class="stat-card__value" data-stat-new>0</div>
+            <div class="stat-card__foot">ожидают проверки</div>
+          </div>
+          <div class="stat-card stat-card--progress">
+            <div class="stat-card__label"><i></i> Идет обучение</div>
+            <div class="stat-card__value" data-stat-progress>0</div>
+            <div class="stat-card__foot">группы в работе</div>
+          </div>
+          <div class="stat-card stat-card--done">
+            <div class="stat-card__label"><i></i> Обучение завершено</div>
+            <div class="stat-card__value" data-stat-done>0</div>
+            <div class="stat-card__foot">выпускники</div>
+          </div>
+          <div class="stat-card stat-card--all">
+            <div class="stat-card__label"><i></i> Всего заявок</div>
+            <div class="stat-card__value" data-stat-all>0</div>
+            <div class="stat-card__foot">в базе школы</div>
+          </div>
+        </div>
+
+        <div class="toolbar" style="border:1px solid var(--line);border-radius:var(--radius) var(--radius) 0 0;border-bottom:0;background:#fff">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input class="input" id="adminSearch" type="search" placeholder="Поиск по ФИО, логину, телефону или № заявки" aria-label="Поиск заявок">
+          </div>
+          <select class="select" id="adminStatusFilter" aria-label="Фильтр по статусу">
+            <option value="all">Все статусы</option>
+            <option value="new">Новая</option>
+            <option value="progress">Идет обучение</option>
+            <option value="done">Обучение завершено</option>
+          </select>
+          <select class="select" id="adminTransportFilter" aria-label="Фильтр по транспорту">
+            <option value="all">Все направления</option>
+            <option value="boat">Катер</option>
+            <option value="liner">Круизный лайнер</option>
+            <option value="yacht">Яхта</option>
+          </select>
+          <select class="select" id="adminSort" aria-label="Сортировка">
+            <option value="created-desc">Сначала новые заявки</option>
+            <option value="created-asc">Сначала старые заявки</option>
+            <option value="date-asc">Дата старта: по возрастанию</option>
+            <option value="date-desc">Дата старта: по убыванию</option>
+            <option value="status-asc">Статус: по порядку</option>
+            <option value="name-asc">Клиент: А–Я</option>
+          </select>
+          <button class="toolbar__reset" type="button" data-admin-reset>Сбросить</button>
+        </div>
+
+        <div class="admin-panel" style="border-radius:0 0 var(--radius-lg) var(--radius-lg)">
+          <div class="table-wrap">
+            <table class="table" data-admin-table>
+              <caption class="xs" style="text-align:left;padding:12px 16px 0">Всего заявок в системе: <span data-stat-all-inline>0</span>. Сортировка — по клику на заголовок.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" data-sort="created" class="is-sortable" aria-sort="descending">Заявка <span class="sort-ind">▼</span></th>
+                  <th scope="col" data-sort="name" class="is-sortable" aria-sort="none">Клиент <span class="sort-ind">▲▼</span></th>
+                  <th scope="col">Транспорт</th>
+                  <th scope="col" data-sort="date" class="is-sortable" aria-sort="none">Старт <span class="sort-ind">▲▼</span></th>
+                  <th scope="col">Оплата</th>
+                  <th scope="col" data-sort="status" class="is-sortable" aria-sort="none">Статус <span class="sort-ind">▲▼</span></th>
+                  <th scope="col">Действия</th>
+                </tr>
+              </thead>
+              <tbody data-admin-rows></tbody>
+            </table>
+          </div>
+
+          <div class="empty" data-admin-empty hidden>
+            <div class="empty__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </div>
+            <h3>Ничего не найдено</h3>
+            <p>Измените фильтры или поисковый запрос — возможно, заявка уже обработана.</p>
+          </div>
+
+          <div class="pagination">
+            <div class="pagination__info" data-page-info>Показано 0 из 0</div>
+            <div class="pagination__list" data-page-list></div>
+          </div>
+        </div>
+
+        <div class="grid grid--3 mt-24">
+          <div class="card card--pad">
+            <div class="xs">Клиенты в базе</div>
+            <div class="stat__value" data-stat-clients>0</div>
+          </div>
+          <div class="card card--pad">
+            <div class="xs">Сумма подтверждённых курсов</div>
+            <div class="stat__value" data-stat-revenue>0 ₽</div>
+          </div>
+          <div class="card card--pad">
+            <div class="xs">Отзывов опубликовано</div>
+            <div class="stat__value" data-stat-reviews>0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+        <span>© <span data-year>2026</span> Водить.РФ · Панель администратора</span>
+        <span><a href="index.html">На главную</a> · <a href="account.html">Личный кабинет</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="container"><p class="card card--pad">Для работы панели администратора включите JavaScript.</p></div>
+  </noscript>
+
+  <!-- Подтверждение смены статуса -->
+  <div class="modal" id="statusModal" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <div class="modal__head">
+        <div>
+          <h2 id="statusModalTitle">Изменить статус заявки?</h2>
+          <p>Клиент увидит новый статус в личном кабинете.</p>
+        </div>
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <p id="statusModalText" class="muted" style="font-size:14.5px">—</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        <button class="btn btn--success" type="button" id="statusModalConfirm">Подтвердить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Детали заявки -->
+  <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailNumber" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <div class="modal__head">
+        <div>
+          <h2 id="detailNumber">Заявка</h2>
+          <p>Полная информация из базы заявок.</p>
+        </div>
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="detail-grid" id="detailBody"></div>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Удаление заявки -->
+  <div class="modal" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <div class="modal__head">
+        <div>
+          <h2 id="deleteModalTitle">Удалить заявку?</h2>
+          <p>Отзыв, привязанный к заявке, тоже будет удалён.</p>
+        </div>
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <p id="deleteModalText" class="muted" style="font-size:14.5px">—</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        <button class="btn btn--danger" type="button" id="deleteModalConfirm">Удалить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
