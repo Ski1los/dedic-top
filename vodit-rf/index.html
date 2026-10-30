@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход — Водить.РФ · школа вождения речного транспорта</title>
+  <meta name="description" content="Вход в личный кабинет школы «Водить.РФ». Курсы вождения катера, круизного лайнера и яхты: заявки на обучение, статусы и отзывы.">
+  <meta name="theme-color" content="#007BFF">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Водить.РФ — на главную">
+        <img src="logo.png" alt="" width="40" height="30" decoding="async">
+        <span>Водить.РФ<small>школа речного транспорта</small></span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="index.html" aria-current="page">Вход</a></li>
+          <li><a class="nav__link" href="#courses">Направления</a></li>
+          <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+          <li><a class="nav__link" href="account.html">Кабинет</a></li>
+          <li><a class="nav__link" href="request.html">Заявка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions" data-header-actions>
+        <a class="btn btn--ghost btn--sm" href="index.html" aria-current="page">Войти</a>
+        <a class="btn btn--primary btn--sm" href="register.html">Регистрация</a>
+      </div>
+
+      <button class="burger" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="auth">
+      <aside class="auth__aside">
+        <img src="auth-photo.jpg" alt="Теплоход идёт по Неве мимо Ростральных колонн" width="870" height="1160" fetchpriority="high" decoding="async">
+        <span class="badge badge--white" style="align-self:flex-start;margin-bottom:auto">Личный кабинет курсанта</span>
+        <h2>Ваши заявки, статусы и отзывы — в одном месте</h2>
+        <p>Войдите, чтобы видеть историю обучения, следить за согласованием заявок и оставлять отзывы после выпуска.</p>
+        <div class="hero__facts">
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            История заявок
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Отзывы о курсах
+          </span>
+          <span class="hero__fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            Запись за 2 минуты
+          </span>
+        </div>
+      </aside>
+
+      <div class="auth__panel">
+        <div class="auth-card">
+          <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Водить.РФ</a><span class="sep">/</span><span>Вход</span>
+          </nav>
+
+          <div class="auth-card__head">
+            <h1>Вход в кабинет</h1>
+            <p>Введите логин и пароль, указанные при регистрации.</p>
+          </div>
+
+          <div class="demo-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6h.01"/></svg>
+            <span>Демо-доступ курсанта: <code>demo26</code> / <code>Demo2026</code><br>Администратор: <code>Admin26</code> / <code>Demo20</code></span>
+          </div>
+
+          <div class="demo-hint" data-already-auth hidden style="background:var(--green-soft);border-color:rgba(40,167,69,.45);color:#1c7a33">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>
+            <span>Вы уже вошли как <b data-already-who>курсант</b>.<br><a href="account.html" data-already-link>Перейти в кабинет →</a></span>
+          </div>
+
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label class="field__label" for="loginLogin">Логин <span class="req">*</span></label>
+              <input class="input" id="loginLogin" name="login" type="text" placeholder="Например, demo26" autocomplete="username" data-rule="login" required>
+              <span class="error-text" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="loginPassword">Пароль <span class="req">*</span></label>
+              <div class="input-wrap">
+                <input class="input" id="loginPassword" name="password" type="password" placeholder="Минимум 8 символов" autocomplete="current-password" required>
+                <button class="input-wrap__btn" type="button" data-toggle-password="loginPassword" aria-label="Показать пароль">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12S5.6 5.5 12 5.5 21.8 12 21.8 12 18.4 18.5 12 18.5 2.2 12 2.2 12Z"/><circle cx="12" cy="12" r="3.1"/></svg>
+                </button>
+              </div>
+              <span class="error-text" role="alert"></span>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary btn--block" type="submit">Войти в кабинет</button>
+            </div>
+          </form>
+
+          <p class="auth-switch">Еще не зарегистрированы? <a href="register.html">Регистрация</a></p>
+          <p class="form-note">Нажимая «Войти», вы принимаете правила школы и политику обработки персональных данных.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Направления -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Направления</span>
+          <h2>Три курса — один маршрут к правам судоводителя</h2>
+          <p class="lead">Выберите транспорт, на котором хотите выйти на воду. Программа, практика и документы подобраны под каждый класс судна.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="transport-card reveal" data-transport="boat" style="--delay:0ms">
+            <div class="transport-card__media">
+              <img src="transport-boat.jpg" alt="Катер на реке в ясный день" width="720" height="450" loading="lazy" decoding="async">
+              <span class="transport-card__tag">Хит · старт каждую неделю</span>
+            </div>
+            <div class="transport-card__body">
+              <h3>Катер</h3>
+              <p>Маневрирование, швартовка, расхождение и уверенность на волне — база для любого судоводителя.</p>
+              <ul class="spec-list">
+                <li><span>Длительность</span><b>6 недель</b></li>
+                <li><span>Практика на воде</span><b>12 часов</b></li>
+                <li><span>Документ</span><b>Удостоверение</b></li>
+              </ul>
+              <div class="transport-card__foot">
+                <span class="price">24 000 ₽<small>за курс</small></span>
+                <a class="btn btn--primary btn--sm" href="request.html?transport=boat" data-request-link>Записаться</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="transport-card reveal" data-transport="liner" style="--delay:90ms">
+            <div class="transport-card__media">
+              <img src="transport-liner.jpg" alt="Круизный лайнер проходит под мостом" width="720" height="450" loading="lazy" decoding="async">
+              <span class="transport-card__tag">Профи · для работы</span>
+            </div>
+            <div class="transport-card__body">
+              <h3>Круизный лайнер</h3>
+              <p>Пассажирские суда, навигация, радиосвязь и управление экипажем для тех, кто идёт работать на флот.</p>
+              <ul class="spec-list">
+                <li><span>Длительность</span><b>9 недель</b></li>
+                <li><span>Практика на воде</span><b>18 часов</b></li>
+                <li><span>Документ</span><b>Свидетельство</b></li>
+              </ul>
+              <div class="transport-card__foot">
+                <span class="price">39 000 ₽<small>за курс</small></span>
+                <a class="btn btn--primary btn--sm" href="request.html?transport=liner" data-request-link>Записаться</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="transport-card reveal" data-transport="yacht" style="--delay:180ms">
+            <div class="transport-card__media">
+              <img src="transport-yacht.jpg" alt="Яхта идёт по заливу между зелёных берегов" width="720" height="450" loading="lazy" decoding="async">
+              <span class="transport-card__tag">Премиум · малые группы</span>
+            </div>
+            <div class="transport-card__body">
+              <h3>Яхта</h3>
+              <p>Управление яхтой, погода, безопасность на борту и навигация для владельцев собственных судов.</p>
+              <ul class="spec-list">
+                <li><span>Длительность</span><b>7 недель</b></li>
+                <li><span>Практика на воде</span><b>15 часов</b></li>
+                <li><span>Документ</span><b>Удостоверение</b></li>
+              </ul>
+              <div class="transport-card__foot">
+                <span class="price">32 000 ₽<small>за курс</small></span>
+                <a class="btn btn--primary btn--sm" href="request.html?transport=yacht" data-request-link>Записаться</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="section section--surface" id="reviews">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Отзывы выпускников</span>
+          <h2>Что говорят те, кто уже за штурвалом</h2>
+          <p class="lead">Отзывы оставляют курсанты после завершения обучения — так же, как это устроено в личном кабинете.</p>
+        </div>
+        <div class="grid grid--3" data-public-reviews></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-band reveal">
+          <img src="band.jpg" alt="Катера у причала на набережной" width="1280" height="560" loading="lazy" decoding="async">
+          <div class="cta-band__inner">
+            <div>
+              <h2>Ближайший поток стартует через неделю</h2>
+              <p>Зарегистрируйтесь и подайте заявку онлайн — администратор подтвердит группу и пришлёт расписание.</p>
+            </div>
+            <div class="cta-band__actions">
+              <a class="btn btn--primary" href="register.html">Создать аккаунт</a>
+              <a class="btn btn--light" href="index.html#courses">Выбрать курс</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="logo-white.png" alt="" width="40" height="30" loading="lazy" decoding="async">
+            <span>Водить.РФ<small>школа речного транспорта</small></span>
+          </a>
+          <p>Очное обучение вождению катеров, круизных лайнеров и яхт. Практика на Неве и в Финском заливе с 2007 года.</p>
+          <div class="socials mt-16">
+            <a href="#main" aria-label="Наверх"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4M6 10l6-6 6 6"/></svg></a>
+            <a href="mailto:info@vodit.rf" aria-label="Написать на почту"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__title">Обучение</div>
+          <ul class="footer__list">
+            <li><a href="index.html#courses">Катер</a></li>
+            <li><a href="index.html#courses">Круизный лайнер</a></li>
+            <li><a href="index.html#courses">Яхта</a></li>
+            <li><a href="request.html">Оформление заявки</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__title">Кабинет</div>
+          <ul class="footer__list">
+            <li><a href="index.html">Вход</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+            <li><a href="account.html">Мои заявки</a></li>
+            <li><a href="admin.html">Администратору</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__title">Контакты</div>
+          <div class="footer__contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span>Санкт-Петербург,<br>наб. Лейтенанта Шмидта, 21</span>
+          </div>
+          <div class="footer__contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 13l5 2v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3 5.2 2 2 0 0 1 5 3Z"/></svg>
+            <a href="tel:+78122401855">+7 (812) 240-18-55</a>
+          </div>
+          <div class="footer__contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+            <span>Пн–Сб, 09:00–20:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Водить.РФ · Учебный проект. Все права защищены.</span>
+        <span>Лицензия на образовательную деятельность № 78-Л-0421</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

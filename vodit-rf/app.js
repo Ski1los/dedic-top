@@ -100,7 +100,7 @@
       hours: "24 ак. часа",
       tag: "Хит",
       icon: "boat",
-      image: "assets/img/transport-boat.jpg",
+      image: "transport-boat.jpg",
       desc: "Классика речного вождения: маневрирование, швартовка и уверенность на волне.",
       specs: [
         ["Длительность", "6 недель"],
@@ -116,7 +116,7 @@
       hours: "36 ак. часов",
       tag: "Профи",
       icon: "liner",
-      image: "assets/img/transport-liner.jpg",
+      image: "transport-liner.jpg",
       desc: "Работа на пассажирских судах: навигация, радиосвязь и управление экипажем.",
       specs: [
         ["Длительность", "9 недель"],
@@ -132,7 +132,7 @@
       hours: "30 ак. часов",
       tag: "Премиум",
       icon: "yacht",
-      image: "assets/img/transport-yacht.jpg",
+      image: "transport-yacht.jpg",
       desc: "Курс для тех, кто мечтает о собственной яхте: управление, навигация, безопасность.",
       specs: [
         ["Длительность", "7 недель"],
@@ -353,7 +353,7 @@
   };
   const goLogin = (target) => {
     flash.set({ type: "info", title: "Нужен вход", text: "Войдите в аккаунт, чтобы продолжить." });
-    redirect(`login.html?next=${encodeURIComponent(target)}`);
+    redirect(`index.html?next=${encodeURIComponent(target)}`);
   };
 
   /* ---------------- 3. Тосты ---------------- */
@@ -877,6 +877,18 @@
   function initLogin() {
     const form = $("#loginForm");
     if (!form) return;
+
+    /* уже вошли — предлагаем сразу перейти в кабинет */
+    const active = getSession();
+    const already = $("[data-already-auth]");
+    if (active && already) {
+      const current = getUser(active.userId);
+      already.hidden = false;
+      const link = $("[data-already-link]", already);
+      if (link) link.href = active.role === "admin" ? "admin.html" : "account.html";
+      const who = $("[data-already-who]", already);
+      if (who) who.textContent = active.role === "admin" ? "Администратор Admin26" : current ? current.fullName : active.login;
+    }
     const loginInput = $("#loginLogin");
     const passInput = $("#loginPassword");
     const next = new URLSearchParams(location.search).get("next");
@@ -1694,7 +1706,8 @@
     $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
     const page = document.body.dataset.page;
-    if (page === "home") initHome();
+    renderPublicReviews();
+    if (page === "home" || page === "login") initHome();
     if (page === "login") initLogin();
     if (page === "register") initRegister();
     if (page === "account") initAccount();
